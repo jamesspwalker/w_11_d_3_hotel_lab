@@ -36,6 +36,10 @@ public class Bedroom {
         }
     }
 
+    public void removeGuests(){
+        this.guests.clear();
+    }
+
 
 }
 

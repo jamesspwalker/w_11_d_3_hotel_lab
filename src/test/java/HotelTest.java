@@ -18,6 +18,7 @@ public class HotelTest {
         bedroom1 = new Bedroom(1, "single", 4);
         conferenceRoom = new ConferenceRoom(4, "The Visting Room");
         guest = new Guest("Chris");
+        hotel.addBedroom(bedroom);
 
     }
 
@@ -50,13 +51,19 @@ public class HotelTest {
 
     @Test
     public void canCheckInGuest(){
-        hotel.addBedroom(bedroom);
         hotel.checkInGuestToBedroom(guest, bedroom);
         hotel.checkInGuestToBedroom(guest, bedroom);
         hotel.checkInGuestToBedroom(guest, bedroom1);
         assertEquals(2, bedroom.getGuestCount());
         assertEquals(0, bedroom1.getGuestCount());
 
+    }
+
+    @Test
+    public void canCheckGuestsOut(){
+        hotel.checkInGuestToBedroom(guest, bedroom);
+        hotel.checkGuestsOut(bedroom);
+        assertEquals(0, bedroom.getGuestCount());
     }
 
 }

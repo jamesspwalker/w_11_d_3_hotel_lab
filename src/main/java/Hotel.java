@@ -39,6 +39,12 @@ public class Hotel {
     }
 
     public void checkInGuestToConferenceRoom(Guest guest, ConferenceRoom conferenceRoom) {
+        if (this.conferenceRooms.contains(conferenceRoom))
         conferenceRoom.addGuest(guest);
+    }
+
+    public void checkGuestsOut(Bedroom bedroom) {
+        if (bedroom.getGuestCount() >= 1);
+        bedroom.removeGuests();
     }
 }
