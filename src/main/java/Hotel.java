@@ -6,6 +6,7 @@ public class Hotel {
     private ArrayList<Bedroom> bedrooms;
     private ArrayList<ConferenceRoom> conferenceRooms;
 
+
     public Hotel(String name){
         this.name = name;
         this.bedrooms = new ArrayList<Bedroom>();
@@ -46,5 +47,11 @@ public class Hotel {
     public void checkGuestsOut(Bedroom bedroom) {
         if (bedroom.getGuestCount() >= 1);
         bedroom.removeGuests();
+    }
+
+    public int bookRoom(int nights, Bedroom bedroom, double price, Guest guest){
+        Booking booking = new Booking(nights, bedroom, price);
+        return booking.checkNumberOfNights();
+
     }
 }

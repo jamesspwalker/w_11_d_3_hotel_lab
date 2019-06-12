@@ -11,6 +11,7 @@ public class HotelTest {
     private ConferenceRoom conferenceRoom;
     private Guest guest;
 
+
     @Before
     public void before(){
         hotel = new Hotel("Code Clan Hotel");
@@ -64,6 +65,11 @@ public class HotelTest {
         hotel.checkInGuestToBedroom(guest, bedroom);
         hotel.checkGuestsOut(bedroom);
         assertEquals(0, bedroom.getGuestCount());
+    }
+
+    @Test
+    public void canMakeBooking(){
+        assertEquals(2, hotel.bookRoom(2, bedroom, 2, guest));
     }
 
 }
